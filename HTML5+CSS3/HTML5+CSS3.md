@@ -28,6 +28,97 @@
 
 ## 02. 텍스트 관련 태그들
 1. 텍스트를 덩어리로 묶어주는 태그
+```html
+	- <h1> ~ <h6> : 텍스트 제목
+	- <p> : 문단
+	- <br> : 줄바꿈
+	- <hr> : 선긋기
+	- <blockquote> : 인용구 표현
+	- <pre> : 입력하는 그대로
+```
 2. 텍스트를 한 줄로 표시하는 태그
+```html
+	- <strong> : 굵게
+	- <b> : bold
+	- <em> : italic + bold
+	- <i> : italic
+	- <q> : quote, 따옴표 표시
+	- <mark> : 형광펜
+	- <span> : 줄바꿈 없이 영역 묶기
+	- <ruby> : 동아시아 활자 중 글자의 주석을 다는 기능
+	- <abbr> : abbreviation/acronym 약자 설명 표기
+	- <cite> : 인용구를 표시
+	- <code> : 소스코드 표현
+	- <kbd> : 사용자가 입력할 버튼?
+	- <small> : 작은 텍스트
+	- <sub> : subscript 아래첨자
+	- <sup> : superscript 윗첨자
+	- <s> : 취소선
+	- <u> : 밑줄
+```
 3. 목록을 만드는 태그
+```html
+	- <ul> : unordered list 번호 없는 목록
+	- <ol> : ordered list 번호 있는 목록
+		- https://www.w3schools.com/tags/tag_ol.asp
+		- type: 순서의 기호을 지정할 수 있다. 1/A/a/I/i
+		- start: 순서의 시작을 지정할 수 있다.
+	- <li> : list item 목록의 각 항목
+```
 4. 표를 만드는 태그
+```html
+	- <table border="1"> : 표의 시작과 끝.
+		- 위에서 아래로, 왼쪽에서 오른쪽으로 요소를 구성한다.
+		- table -> caption
+		- table -> figcaption
+		- table -> (thead -> tbody -> tfoot) -> tr -> th/td
+	- <tr> : table row, 행
+		- https://www.w3schools.com/tags/tag_tr.asp
+	- <td> : table column, Standard cell, 열
+		- https://www.w3schools.com/tags/tag_td.asp
+	- <th> : table column, Header cell, 헤더 열
+		- https://www.w3schools.com/tags/tag_th.asp
+	- <caption> : table caption, 표의 제목
+	- <thead> : table header, 항목에 대한 설명이 필요한 첫번째 줄, 브라우저에서 첫줄에 대한 스크롤 지원 가능
+	- <tbody> : table body
+	- <tfoot> : table footer, 마지막 줄, 브라우저에서 마지막 줄에 대한 스크롤 지원 가능
+	- <colgroup> : column group, column 설정을 관리
+	- <col> : column 단위로 설정한다.
+		- span: 가로(오른쪽)로 개수만큼 동일하게 적용
+```
+
+## 03. 이미지와 하이퍼링크
+1. 이미지
+	- 웹에서 사용하는 이미지 형식
+		- gif : Graphic Interchange Form
+			- 최대 256컬러
+			- 작은 아이콘/이미지, 투명배경, 움직이는 이미지
+		- jpg/jpeg : Joint Photographic Experts Group
+			- 사진용, gif 보다 다양한 색상, 저장을 반복하면 화질이 떨어질 수 있다?
+		- png : Potable Network Graphic
+			- 네트워크용으로 개발
+			- 투명배경, 다양한 색상
+
+```html
+	- <img> : images 이미지를 표시
+		- src : 이미지 경로, 로컬의 경우 현재 html이 있는 경로를 기준
+		- alt : 이미지 설명
+			- 시각장애인 낭독기, 이미지 액박일때
+		- width / height: 이미지 크기
+	- <figure> : 설명 글을 붙일 대상(이미지, 표 등)을 감싼다.
+		- <figcaption> : 설명할 내용을 담는다.
+```
+
+2. 링크 만들기
+```html
+	- <a> : a hyperlink
+		- https://www.w3schools.com/tags/tag_a.asp
+		- href : 링크주소
+		- target : 링크된 내용이 표시될 창 지정 - 현재 창/새 창
+			- _blank : 새 창/새탭
+			- _self : 현재 창
+			- _parent : 프레임 안에 있다면 부모 프레임에 표시
+			- _top : 프레임 밖 전체화면에 표시
+		- download : 링크로 넘어가지 않고 다운로드 하게 함
+		- rel : 현재 문서와 링크한 문서와의 관계를 알려줌
+```
