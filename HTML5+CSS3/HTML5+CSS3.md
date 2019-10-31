@@ -144,3 +144,64 @@
 	- SVG 미지원 : IE 8 이하, Android 2.3 이하 - PNG를 사용해야 함
 	- Modernizr 사이트로 특정기능 지원여부 테스트
 		- https://modernizr.com/download?setclasses
+
+## 04. 폼 관련 태그들
+1. 폼 만들기
+```html
+	- <form> : <input>을 감싸고 입력에 대한 컨트롤을 지원한다.
+		- method : 사용자가 입력한 내용을 서버로 보내는 방식
+			- get : 내용 드러남, 256 ~ 4096 byte까지
+			- post : 내용 길이제한 없고, 내용 드러나지 않음. 주로 이 방식 사용
+		- name : 여러개의 form들 중에서 구분하기 위해 form의 이름을 지정
+		- action : form 의 내용을 처리해 줄 실행할 스크립트 파일을 지정
+		- target : action에서 지정한 스크립트 파일을 다른위치에 열도록 지정
+		- autocomplete : on(default) / off
+	- <label> : <input>을 감싸고 레이블을 붙이기 위한 것. 브라우져가 인식함
+		- for : input의 id를 지정하여 그 input과 연결. input을 감싸지 않아도 됨
+		- 라디오 버튼, 체크박스에 달아두면 text를 터치해도 선택되게 하는 효과
+	- <fieldset> : 태그 안의 form들을 묶는 외곽선을 그려줌
+		- <legend> : 외곽선의 제목(레이블)을 설정
+```
+
+2. 사용자 입력을 위한 input 태그
+```html
+	- <input> : 사용자 입력란
+		- name : 필드의 이름을 지정
+		- value : 필드의 값
+		- type : 입력하는 형태
+			- hidden : 사용자에게는 보이지 않음
+			- text : 한줄짜리 텍스트
+				- size : 화면에서 text box의 길이를 지정, 글자수 단위
+				- maxlength: 최대 문자 개수
+			- password : 비밀번호
+			- search : html5에서 추가됨, 검색상자, 텍스트 지울 수 있는 x 버튼이 나온다.
+			- url : URL 주소, "http://" 로 시작하는 주소를 자동으로 체크
+			- email : 메일 주소, 메일주소 형식을 자동으로 체크
+			- tel : 전화번호 입력, 바로 전화를 걸 수 있도록
+			- number : 숫자 조절 화살표, 브라우저에 따라 스핀박스(증감 버튼) 지원
+			- range : 숫자 조절 슬라이드 막대, 일부 브라우저는 텍스트 상자로 표시됨
+			- checkbox : 복수선택 체크박스
+			- radio : 단일선택 라디오버튼
+				- name : 라디오 버튼의 그룹, 같은 이름 중에서 하나만 고를 수 있도록 함
+				- value : 선택된 버튼의 값
+				- checked : 기본으로 선택된 상태를 설정
+			- color : 색상 표에서 색상을 선택할 수 있도록, html5에서만
+				- value : #ffffff 형태의 값
+			- date : 사용자 지역 기준 날짜(년월일), 일부 브라우저는 달력 미지원(yyyy/mm/dd 타이핑 입력)
+			- month : 사용자 지역 기준 월(년월)
+			- week : 사용자 지역 기준 주(년주)
+			- time : 사용자 지역 기준 시간(시분초,분할초)
+			- datetime : UTC 날짜(년월일)와 시간(시분초,분할초)
+				- HTML5 미지원 => HTML5.1 지원
+				- 타임존 표기
+					- UTC : 날짜 뒤 Z
+					- 아닌경우 : +dd:dd, -dd:dd
+			- datetime-local : 사용자 지역 기준 날짜와 시간
+			- submit / reset : 서버 전송 / 리셋 버튼
+			  - action : 프로그림의 파일명(php)
+				- method : get / post 방식을 지정
+			- image : submit 버튼 대신 사용할 이미지
+			- button : 버튼
+				- value : 버튼 내용
+			- file : 파일 첨부 버튼
+```
