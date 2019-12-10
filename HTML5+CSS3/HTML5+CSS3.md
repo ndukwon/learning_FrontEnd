@@ -166,9 +166,9 @@
 2. 사용자 입력을 위한 input 태그
 ```html
 	- <input> : 사용자 입력란
-		- name : 필드의 이름을 지정
-		- value : 필드의 값
-		- type : 입력하는 형태
+		1. name : 필드의 이름을 지정
+		2. value : 필드의 값
+		3. type : 입력하는 형태
 			- hidden : 사용자에게는 보이지 않음
 			- text : 한줄짜리 텍스트
 				- size : 화면에서 text box의 길이를 지정, 글자수 단위
@@ -204,4 +204,30 @@
 			- button : 버튼
 				- value : 버튼 내용
 			- file : 파일 첨부 버튼
+```
+
+3. input 태그의 다양한 속성
+```html
+	1. autofocus : 페이지를 불러오자마자 폼의 요소 중 원하는 요소에 마우스 커서를 표시
+	2. placeholder : 힌트 내용을 표시
+	3. readonly : 읽기전용
+		- readonly
+		- readonly="readonly"
+		- readonly="true"
+	4. required : 필수 필드 지정
+		- required
+		- required="required"
+	5. min, max, step : (숫자) 최소, 최대, 간격 값 지정
+		- date, datetime, datetime-local, month, week, time, number, range 에서만 사용가능
+	6. size, minlength, maxlength : text 길이, 최소길이, 최대길이
+	  - minlength : 최신 크롬과 안드로이드에서만 지원
+	7. etc
+		- formaction : type="image", type="submit"일때 실행할 프로그램을 연결
+		- formenctype : type="image", type="submit"일때 서버에서 폼 데이터를 어떤 방식으로 해석할 것인지 지정
+		- formmethod : 서버에 전송할 방식(GET, POST 등) 지정. <form> 테그에서 지정해도 무시하고 이 방식으로 함
+		- formnovalidate : 서버 전송할때 유효성 여부 표시
+		- formtarget : 서버의 응답을 어디에 표시할 것인지 타깃을 지정
+		- height, width: type="image" 일 때 크기 지정
+		- list : <datalist> 태그 에서 미리 정해놓은 옵션 값을 <input>안에 나열
+		- multiple : type="email", type="file" 일때 두개 이상의 값을 입력
 ```
