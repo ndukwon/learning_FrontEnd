@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <hr>
 <h3>04-2. 사용자 입력을 위한 input 태그</h3>
 
@@ -45,4 +46,75 @@
 	<label><input placeholder="required" required>required</label><br>
 	<label><input type="submit" placeholder="submit">submit</label><br>
 	<label><input type="number" placeholder="min/max/step" min="13" max="100" step="30">min/max/step</label><br>
+</form>
+
+<hr>
+<h3>04-4. 여러 데이터 나열해 보여 주기</h3>
+
+<form>
+	<label>select</label>
+	<select id="가나다라">
+		<option value="가">가</option>
+		<option value="나">나</option>
+		<option value="다">다</option>
+		<option value="라">라</option>
+	</select>
+	<br>
+	<label>select + size 3</label>
+	<select id="가나다라" size="3">
+		<option value="가">가</option>
+		<option value="나">나</option>
+		<option value="다">다</option>
+		<option value="라">라</option>
+	</select>
+	<br>
+	<label>select + multiple</label>
+	<select id="가나다라" multiple>
+		<option value="가">가</option>
+		<option value="나">나</option>
+		<option value="다">다</option>
+		<option value="라">라</option>
+	</select>
+	<br>
+	<label>select + optgroupt</label>
+	<select id="가나다라">
+		<optgroup label="가나" value="가나">
+			<option value="가">가</option>
+			<option value="나">나</option>
+		</optgroup>
+		<optgroup label="다라">
+			<option value="다">다</option>
+			<option value="라">라</option>
+		</optgroup>
+	</select>
+	<br>
+	<label>input + datalist</label>
+	<input type="text" id="data-source" list="korean-alphabet">
+	<datalist id="korean-alphabet">
+		<optgroup label="가나" value="가나">
+			<option value="가">가</option>
+			<option value="나">나</option>
+		</optgroup>
+		<optgroup label="다라">
+			<option value="다">다</option>
+			<option value="라">라</option>
+		</optgroup>
+	</datalist>
+	<br>
+	<label>textarea + cols=10 + rows=3</label>
+	<textarea name="가나다라" cols="10" rows="3">1234567890가나다라마바사아자차카타파하ABCDEFGHIJKLMNOPQRSTUVWXYZ</textarea>
+</form>
+
+<hr>
+<h3>04-5. 기타 다양한 폼 요소들</h3>
+
+<form>
+	<label>button + type="submit"</label>
+	<button type="submit">submit</button>
+	<br>
+	<label>button + type="reset"</label>
+	<button type="reset">reset</button>
+	<br>
+	<label>button + type="button"</label>
+	<button type="button">button</button>
 </form>

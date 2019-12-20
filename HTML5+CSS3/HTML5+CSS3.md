@@ -231,3 +231,38 @@
 		- list : <datalist> 태그 에서 미리 정해놓은 옵션 값을 <input>안에 나열
 		- multiple : type="email", type="file" 일때 두개 이상의 값을 입력
 ```
+
+4. 여러 데이터 나열해 보여 주기
+```html
+	1. <select> : 드롭다운
+		- size : 드롭다운 항목의 개수
+		- multiple : 멀티선택 가능(control을 누르고 여러개 선택 가능)
+		- <option> : 드롭다운의 항목들
+			- value : 선택되었을때 전달될 값
+			- selected : 기본 선택
+		- <optgroupt> : 옵션들을 그룹으로 묶음
+			- label : 그룹 이름
+			- value : 선택되었을때 전달될 값?
+	2. <input> + <datalist> : 드롭다운 이지만 typing 입력도 가능함
+		- <input> + list => <datalist> + id 지정
+		- <option> : 드롭다운의 항목들, <select> 의 경우와 동일
+	3. <textarea> : 여러줄 입력 텍스트 영역
+		- name : 영역의 이름
+		- cols : 가로길이, 문자 단위
+		- rows : 세로길이, 문자 단위
+
+```
+
+5. 기타 다양한 폼 요소들
+```html
+	1. <button> : 버튼
+		- <input type="button">보다의 장점 :
+			- 화면 낭독기가 이 부분이 명확히 버튼이다고 인식이 가능하다.
+			- tag + css 만으로 구성하기 때문에 빠르다.
+		- type="submit" : 서버로 전송
+			- value="전송하기"
+		- type="reset" : (자신이 소속된) form 입력내용을 초기화
+		- type="button" : 버튼 형태
+	2. <output> : 계산 결과
+		- 
+```
