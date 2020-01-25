@@ -250,7 +250,6 @@
 		- name : 영역의 이름
 		- cols : 가로길이, 문자 단위
 		- rows : 세로길이, 문자 단위
-
 ```
 
 5. 기타 다양한 폼 요소들
@@ -264,5 +263,15 @@
 		- type="reset" : (자신이 소속된) form 입력내용을 초기화
 		- type="button" : 버튼 형태
 	2. <output> : 계산 결과
-		- 
+		- 브라우저가 정확히 output인지를 input의 결과를 잘 보여줄 수 있다.
+		- 감싸고 있는 <form>의 oninput으로 input => output 될 계산식을 설정
+	3. <progress> : progress
+		- value : 진행된 값
+		- max : 최대 진행될 값. default: 1
+	4. <meter> : progress와 유사
+		- min/max : 최소/최대값. default: 0/1
+		- value : 표시할 값(초록색)
+		- low : 이 값 이하로는 low(노란색)
+		- high : 이 값 이상으로는 high(노란색)
+		- optimum : 이 값이 적정한 값
 ```

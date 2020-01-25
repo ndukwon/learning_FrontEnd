@@ -118,3 +118,42 @@
 	<label>button + type="button"</label>
 	<button type="button">button</button>
 </form>
+<form oninput="result.value=num1.value+num2.value">
+	<input type="number" name="num1"></input>
+	+
+	<input type="number" name="num2"></input>
+	=
+	<output name="result" for="num"></output>
+	<label name="result" for="num"></label>
+</form>
+
+<label>
+	progress
+	<progress value="10" max="50">
+</label>
+<br>
+<label>
+	meter : min 10, max 50, value 30
+	<meter min="10" max="50" value="30"></meter>
+</label>
+<br>
+<label>
+	meter : min 10, max 50, low 30, value 20 30 40
+	<meter min="10" max="50" low="30" value="20"></meter>
+	<meter min="10" max="50" low="30" value="30"></meter>
+	<meter min="10" max="50" low="30" value="40"></meter>
+</label>
+<br>
+<label>
+	meter : min 10, max 50, high 30, value 20 30 40
+	<meter min="10" max="50" high="30" value="20"></meter>
+	<meter min="10" max="50" high="30" value="30"></meter>
+	<meter min="10" max="50" high="30" value="40"></meter>
+</label>
+<br>
+<label>
+	meter : min 10, max 50, optimum 30, value 20 30 40
+	<meter min="10" max="50" optimum="30" value="20"></meter>
+	<meter min="10" max="50" optimum="30" value="30"></meter>
+	<meter min="10" max="50" optimum="30" value="40"></meter>
+</label>
