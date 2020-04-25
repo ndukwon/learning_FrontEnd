@@ -275,3 +275,103 @@
 		- high : 이 값 이상으로는 high(노란색)
 		- optimum : 이 값이 적정한 값
 ```
+
+## 05. CSS 기초
+1. 스타일과 스타일 시트
+	- 웹 표준 : HTML - 내용을 나열, CSS - 디자인 구성
+	- 스타일과 스타일 시트
+		```
+		- 내부 스타일 시트 : <style></style>
+		- 외부 스타일 시트 :
+			- .CSS
+			- <link href="[스타일 파일 경로]" rel="stylesheet" type="text/css">
+		- 인라인 스타일 : style="스타일~"
+		```
+2. 주요 선택자
+		```
+		- 전체 선택 : * { 스타일~ }
+		- 태그 : [태그명] { 스타일~ }
+		- 클래스 : .[클래스명] { 스타일~ }
+		- id : #[id명] { 스타일~ }
+		```
+3. 캐스캐이딩 스타일 시트(CSS)
+	- CSS : Cascading Style Sheet
+	- 스타일간의 충돌을 막기 위한 방법
+	- 스타일 우선순위
+		- 중요도(important)
+			1. 사용자 스타일 시트의 중요 스타일
+				- 저시력자, 색약자 설정 등
+			2. 제작자 스타일 시트의 중요 스타일
+				- 사이트 제작자가 만든 스타일 중 !important 가 붙은 것
+			3. 제작자 스타일 시트의 일반 스타일
+				- 사이트 제작자가 만든 스타일
+			4. 사용자 스타일 시트의 일반 스타일
+			5. 브라우저 스타일 시트의 스타일
+				- 링크 색상 등 브라우저가 정하는 색상
+		- 명시도(Specificity)
+			1. 인라인 스타일
+			2. id 스타일
+			3. 클래스 스타일
+			4. 태그 스타일
+		- 소스 순서 : 나중에 나온 스타일이 덮어씀
+	- 스타일 상속
+		- 부모 요소가 자식 요소에 상속된다.
+		- 예외 : 배경이미지, 배경색 등
+
+4. CSS3와 CSS 모듈
+	- CSS2 : 스타일이 한꺼번에 담겨있어 덩치가 크고 복잡
+	- CSS3 : 작은 CSS 모듈들, 보다 정교해지고 애니메이션 지원
+	- W3C 표준화 단계
+		1. LC : Last Call Working Draft. 초안을 최종 검토
+		2. WD : Working Draft. 초안. W3C 멤버, 대중, 다른 기술단체 등의 검토
+		3. CR : Candidate Recommendation. 후보 권고안
+		4. PR : Proposed Recommendation. 제안 권고안
+		5. REC : W3C Recommendation. 권고안
+	- 브라우저 접두사
+		- -webkit- : 사파리, 크롬 등 웹키트 방식
+		- -moz- : 모질라, 파이어폭스 등 게코 방식
+		- -o- : 오페라 브라우저
+		- -ms- : 인터넷 익스플로러
+	- 브라우저 접두사 자동으로 붙이기
+		- 라이브러리 : https://leaverou.github.io/prefixfree/#
+
+## 06. 텍스트 관련 스타일
+1. 글꼴 관련 스타일
+	- font-family : [글꼴 이름1], [글꼴 이름2], [글꼴 이름3]
+		- 사용자에 시스템에 없으면 표시할 수 없으므로 web-safe font를 사용
+		- web-safe font
+			- Window: 영문 - sans-serif, 한글 - 굴림, 궁서, 돋움, 바탕
+		- 하위에 항속. 보통 Body에 선언
+	- 웹 폰트
+		- @import url([폰트 URL]);
+		- import한 폰트를 포함하여 font-family를 선언
+	- 직접 웹 폰트
+		- 글꼴파일 :
+			- ttf/otf(True Type font / Open Type font), 파일 사이즈가 크다
+			- eot(Embedded Open Type)
+			- woff(Web Open Font Format)
+			- svg/svgz
+			- 글꼴 포멧 변환 가능하지만 사용허가 있어야 함. 사전에 확일 필요
+		- @font-face { font-family: [폰트명]; src:url(글꼴파일 경로) format(파일 유형)}
+			형태로 선언, 지원가능여부에 따라서 파일 유형
+	- font-size : 글자 크기 속성
+		- 절대크기: xx-small | x-small | small | medium | large | x-large | xx-large
+		- 상대크기: larger | smaller
+		- 지정크기: px...
+			- 크기 단위
+				- em: 부모 폰트크기 대문자 M의 크기 = 1em
+				- ex: x-height, 소문자 x의 높이를 기준으로
+				- px: 모니터의 상대적 크기, 모바일 환경 고려한다면 em을 권장
+				- pt: 포인트, 일반 문서
+		- 백분율: 부모의 글자크기를 기준으로
+	- font-weight : 글자 굵기 지정
+		- 상대값: normal | bold | bolder | lighter
+		- 절대값: 100 | 200 | 300 | 400(=normal) | ... | 700(=bold) | 900
+
+2. 텍스트 스타일
+3. 문단 스타일
+4. 목록과 링크 스타일
+
+## 07. 색상과 배경을 위한 스타일
+## 08. 레이아웃을 위한 스타일
+## 09. CSS 포지셔닝
