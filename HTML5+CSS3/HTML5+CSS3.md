@@ -367,11 +367,173 @@
 	- font-weight : 글자 굵기 지정
 		- 상대값: normal | bold | bolder | lighter
 		- 절대값: 100 | 200 | 300 | 400(=normal) | ... | 700(=bold) | 900
+	- font-variant : 영어 글꼴에서 대문자를 소문자 크기에 맞추어 작게 표시
+		- small-caps: 작은 대문자
+	- font-style : 이탤릭체
+		- italic: 글꼴이 지원하는 이탤릭체
+		- oblique: 단순히 기울어지게 표시
+	- font : 글꼴 속성 한번에 정의
+		- 순서: font-style, font-variant, font-weight, font-size/line-height, font-family
+		- 또는 해당하는 키워드에 어울리는 글꼴 스타일 : caption | icon | menu | message-box | small-caption | status-bar
 
 2. 텍스트 스타일
+	- color: 글자색
+	- text-decoration: 밑줄, 취소선 등
+		- underline: 밑줄, ex) <span style="text-decoration:underline">underline</span>
+		- overline: 윗줄, ex) <span style="text-decoration:overline">overline</span>
+		- line-through: 취소선, ex) <span style="text-decoration:line-through">line-through</span>
+	- text-transform: 대소문자 변환
+		- capitalize: 시작하는 첫번째 글자를 대문자로
+			ex) <span style="text-transform:capitalize">capitalize capitalize</span>
+		- uppercase: 대문자로 변환
+			ex) <span style="text-transform:uppercase">uppercase uppercase</span>
+		- lowercase: 소문자로 변환
+			ex) <span style="text-transform:lowercase">LOWERCASE lowercase</span>
+		- full-width: 전각문제로 변환, 지원하는 문자에 한함
+			ex) <span style="text-transform:full-width">full-width full-width</span>
+	- text-shadow: 텍스트 그림자 효과, 여러번 선언하여 오버레이
+		- 가로거리 세로거리 번짐정도 색상
+		- 가로거리: 양수-오른쪽, 음수-왼쪽에 그림자
+		- 세로거리: 양수-아래쪽, 음수-위쪽에 그림자
+		- 번짐정도: 양수-밖으로, 음수-안쪽으로 번짐
+	- white-space: 공백
+		- normal: 여러개의 공백을 하나로 표시
+		- nowrap: normal + 줄바꿈 안함
+		- pre: 여러개의 공백을 그대로 표시 + 줄바꿈 안함
+		- pre-line: normal + 자동 줄바꿈
+		- pre-wrap: 여러개의 공백을 그대로 표시 + 자동 줄바꿈
+	- letter-spacing / word-spacing : 낱글자사이 간격 / 단어사이 간격
+		- ex) letter-spacing: 0.2em;
+
 3. 문단 스타일
-4. 목록과 링크 스타일
+	- direction: 글자 쓰기 방향,
+		- ltr: ex) <span style="direction:ltr">가나다라마바사</span>
+		- rtl: ex) <span style="direction:rtl">언어가 ltr 이면 미적용</span>
+	- text-align: 텍스트 정렬
+		- start: ltr언어는 왼쪽, rtl언어는 오른쪽으로 정렬
+		- end: start의 반대
+		- left/right/center: 왼쪽/오른쪽/가운데 맞춤
+		- justify: 양쪽에 맞추어 정렬
+		- match-parent: 부모의 요소를 따라 문단을 정렬. 단, 부모가 start/end인 경우는 left/right으로 고정됨
+	- text-justify: 텍스트 정렬시의 공백
+		- auto: 웹브라우저의 자동
+		- none: 정렬 안함
+		- inter-word: 단어 사이의 공백읠 조절
+		- distribute: 글자단위의 사이 공백을 똑같이 맞추어 정렬
+	- text-indent: 텍스트 들여쓰기
+		- 크기 지정: px등의 단위로 지정, 백분률: 부모요소의 너비를 기준, 음수도 가능
+	- line-height: 줄 간격 조절
+		- normal | 크기 지정: px등의 단위로 지정 | 숫자/백분율: 글자크기를 기준 | inherit
+	- text-overflow: text가 레이아웃을 넘어갈때의 설정
+		- white-space는 줄바꿈에 대한 설정이고, 줄바꿈이 일어나지 않을때 레이아웃에 넘치는 text를 어떻게 처리할 것인지에 대한 설정
+		- clip: 넘치는 text 자름
+		- elipsis: 말 줄임(...) 으로 표시
+			- overflow와 같이 쓰여지면서 hover 하면 나머지 글이 보이도록 하는 동작으로 자주 쓰임
+
+4. 목록 스타일
+	- list-style-type: 목록의 bullet 모양
+		- ul case
+			- disc: default라는데... ex) <ul style="list-style-type: disc"><li>list-style-type: disc</li></ul>
+			- circle: ex) <ul style="list-style-type: circle"><li>list-style-type: circle</li></ul>
+			- square: ex) <ul style="list-style-type: square"><li>list-style-type: square</li></ul>
+			- none: ex) <ul style="list-style-type: none"><li>list-style-type: none</li></ul>
+		- ol case
+			- decimal: ex) <ol style="list-style-type: decimal"><li>list-style-type: decimal</li></ol>
+			- decimal-leading-zero: ex) <ol style="list-style-type: decimal-leading-zero"><li>list-style-type: decimal-leading-zero</li></ol>
+			- lower-roman: ex) <ol style="list-style-type: lower-roman"><li>list-style-type: lower-roman</li></ol>
+			- upper-roman: ex) <ol style="list-style-type: upper-roman"><li>list-style-type: upper-roman</li></ol>
+			- lower-alpha: ex) <ol style="list-style-type: lower-alpha;"><li>list-style-type: lower-alpha</li></ol>
+			- upper-alpha: ex) <ol style="list-style-type: upper-alpha"><li>list-style-type: upper-alpha</li></ol>
+			- armenian: ex) <ol style="list-style-type: armenian"><li>list-style-type: armenian</li></ol>
+			- georgian: ex) <ol style="list-style-type: georgian"><li>list-style-type: georgian</li></ol>
+	- list-style-image: ul 목록의 bullet 모양대신 이미지로
+		- url(image url 경로): 없으면 list-style-type 설정을 따름
+			- ex) <ul style="list-style-image: url(https://img.icons8.com/metro/26/000000/domain.png)"><li>list-style-image: url(https://img.icons8.com/metro/26/000000/domain.png)</li></ul>
+	- list-style-position: 목록 들여쓰는 효과를 bullet을 포함할 것인가의 여부
+		- inside: ex) <ol style="list-style-position: inside"><li>list-style-position: inside</li></ol>
+		- outside: default, ex) <ol style="list-style-position: outside"><li>list-style-position: outside</li></ol>
+	- list-style: type, image, position 설정을 한번에
+		- type, image, position 순서대로 설정: image 로딩에 실패시 type 속성대로 보여줌
+
 
 ## 07. 색상과 배경을 위한 스타일
+1. 웹에서 색상 표현하기
+	- 16진수 표기법: #RRGGBB, 00 ~ FF : 없음 ~ 가득
+	- rgb/rgba 표기법: 10진수, rgb(red, green, blue)/rgba(red, green, blue, alpha) 로 표현, 0 ~ 255 : 없음 ~ 가득, alpha: 불투명도 - 0 ~ 1: 투명 ~ 불투명
+	- hsl/hsla 표기법: hue(색상), saturation(채도), lightness(밝기)
+		- 색상환(원형 그라데이션으로 된 색 고르는 판)
+		- hue(색상): 0/360도: red, 120도: green, 240도: blue
+		- saturation(채도): 0%: 회색 ~ 100%: 아무것도 안 섞은 순수한 그색
+		- lightness(밝기): 0%: 어두움 ~ 100%: 가장 밝음
+		- ex) 빨간색: hsl(360, 100%, 0%) => 반투명 빨간색: hsl(360, 100%, 0%, 0.5)
+	- 색상 이름 표기법: red, yellow, black 등 web-safe color(웹 안전 색상)
+		- 기본 16색, 총 216가지 색상
+	- 색상 추출 사이트
+		- https://www.w3schools.com/colors/colors_picker.asp
+		- https://www.webfx.com/web-design/color-picker/
+
+2. 배경 색과 배경 이미지
+	- background-color: 배경 색 지정
+		- 16진수/rgb/색상이름 으로 지정
+		- 상속 X
+	- background-clip: 배경 적용 범위 조절
+		- border-box: border(테두리) 까지, default
+		- padding-box: border(테두리)를 제외한 padding 까지
+		- content-box: 내용부분에만
+	- background-image: 배경 이미지 지정
+		- url(파일경로): 절대/상대경로 등
+	- background-repeat: 배경 이미지 반복 방법 지정
+		- repeat: 가득 찰때까지 가로, 세로 반복 - default
+		- repeat-x/repeat-y: 가로/세로로 반복
+		- no-repeat: 한번만 표시
+	- background-size: 배경 이미지 크기 조절
+		- auto: 이미지 크기만큼 표시 - default
+		- contain: 이미지를 요소의 크기에 맞춤, 비율 유지
+		- cover: 배경 이미지가 요소를 모두 덮도록
+		- 가로 세로 지정: 크기값이 하나만 주어지면 가로로 지정되고 이미지의 비율에 맞추어 나머지 크기 자동
+			- ex) 200px 150px, ex) 60% 40%
+	- background-position: 배경 이미지 위치 조절
+		- ex) background-position: left center;
+		- 수평 수직 지정: 하나만 지정하면 수평으로 간주, 수직은 center/50% 자동 지정
+			- 수평: left/center/right/백분율/고정값
+			- 수직: top/center/bottom/백분율/고정값
+		- 백분율/고정값: 지정한 값 만큼 왼쪽/위쪽을 비우고 왼쪽/상단 모서리에 맞춤
+	- background-origin: background-position을 사용할때 왼쪽/상단의 시작 기준
+		- background-clip 속성과 유사
+		- border-box: border(테두리) 까지, default
+		- padding-box: border(테두리)를 제외한 padding 까지
+		- content-box: 내용부분에만
+	- background-attachment: 스크롤시 배경 이미지 고정
+		- scroll: 스크롤에 따라 이동
+		- fixed: 화면에 고정
+	- background: background 관련 속성을 한방에
+		- 순서: background-image, background-repeat, background-attachment,
+			background-position, background-clip, background-origin, background-size
+
+
+3. 그러데이션 효과로 배경 꾸미기
+	- 지원하지 않는 브라우저 접두사
+		- -webkit- : 사파리 5.1 ~ 6.0
+		- -moz- : 파이어폭스 3.6 ~ 15
+		- -o- : 오페라 11.1 ~ 12.0
+		```html
+		<style>
+			.hello {
+				background: blue; // 미지원 브라우저용
+				background: -webkit-linear-gradient(left top, blue, white);
+				background: -moz-linear-gradient(right bottom, blue, white);
+				background: -o-linear-gradient(right bottom, blue, white);
+				background: linear-gradient(to right bottom, blue, white);
+			}
+		</style>
+		<div class="hello">hello</div>
+		```
+	- 선형 그러데이션: linear-gradient(<각도> to <방향>, color-stop, [color-stop, ...])
+		- 수평, 수직, 대각선 방향으로 일정하게 변화
+		- 방향
+			- to top/bottom : 아래에서 시작하여 위로 / 위에서 시작하여 아래로
+			- to left/right : 오른쪽에서 시작하여 왼쪽으로 / 왼쪽에서 시작하여 오른쪽으로
+
+
 ## 08. 레이아웃을 위한 스타일
 ## 09. CSS 포지셔닝
