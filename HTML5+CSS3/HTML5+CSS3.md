@@ -516,24 +516,101 @@
 		- -webkit- : 사파리 5.1 ~ 6.0
 		- -moz- : 파이어폭스 3.6 ~ 15
 		- -o- : 오페라 11.1 ~ 12.0
-		```html
-		<style>
-			.hello {
-				background: blue; // 미지원 브라우저용
-				background: -webkit-linear-gradient(left top, blue, white);
-				background: -moz-linear-gradient(right bottom, blue, white);
-				background: -o-linear-gradient(right bottom, blue, white);
-				background: linear-gradient(to right bottom, blue, white);
-			}
-		</style>
-		<div class="hello">hello</div>
-		```
+	```html
+	<style>
+		// 방향지정
+		.hello {
+			background: blue; // 미지원 브라우저용
+			// 시작위치, 시작색상, 끝 색상
+			background: -webkit-linear-gradient(left top, blue, white);
+			// 끝 위치, 시작색상, 끝 색상
+			background: -moz-linear-gradient(right bottom, blue, white);
+			background: -o-linear-gradient(right bottom, blue, white);
+			background: linear-gradient(to right bottom, blue, white);
+		}
+
+		// 각도 지정
+		.hello2 {
+			background: #ff0000; // 미지원 브라우저용
+			// 끝 부분 각도, 시작색상, 끝 색상
+			background: -webkit-linear-gradient(45deg, #ff0000, #ffffff);
+			background: -moz-linear-gradient(45deg, #ff0000, #ffffff);
+			background: -o-linear-gradient(45deg, #ff0000, #ffffff);
+			background: linear-gradient(45deg, #ff0000, #ffffff);
+		}
+
+		// 색상 중지 점(color-stop)
+		.hello3 {
+			background: #06f; // 미지원 브라우저용
+			// 시작부분, 시작색상, 중간색상 시작위치에서의 거리,끝 색상
+			background: -webkit-linear-gradient(top, #06f, white 30%, #06f);
+			// 끝부분, 시작색상, 중간색상 시작위치에서의 거리,끝 색상
+			background: -moz-linear-gradient(bottom, #06f, white 30%, #06f);
+			background: -o-linear-gradient(bottom, #06f, white 30%, #06f);
+			background: linear-gradient(bottom, #06f, white 30%, #06f);
+		}
+	</style>
+	```
 	- 선형 그러데이션: linear-gradient(<각도> to <방향>, color-stop, [color-stop, ...])
 		- 수평, 수직, 대각선 방향으로 일정하게 변화
-		- 방향
+		- 방향: 그러데이션의 방향
 			- to top/bottom : 아래에서 시작하여 위로 / 위에서 시작하여 아래로
 			- to left/right : 오른쪽에서 시작하여 왼쪽으로 / 왼쪽에서 시작하여 오른쪽으로
+		- 각도: 색상이 바뀌는 방향
+			- 수직 윗 방향을 기준으로 0deg, 오른쪽 시계방향으로 증가
+		- 색상 중지 점(color-stop): 그러데이션 중간 지점 색 변화
+			- 시작 위치에서의 거리와 중간지점의 색을 지정
 
+	```html
+	<style>
+		// 모양: ellipse(default)
+		.hello {
+			background: red; // 미지원 브라우저용
+			background: -webkit-radial-gradient(white, yellow, red);
+			background: -moz-radial-gradient(white, yellow, red);
+			background: -o-radial-gradient(white, yellow, red);
+			background: radial-gradient(white, yellow, red);
+		}
+
+		// 모양: circle
+		.hello2 {
+			background: red; // 미지원 브라우저용
+			background: -webkit-radial-gradient(circle, white, yellow, red);
+			background: -moz-radial-gradient(circle, white, yellow, red);
+			background: -o-radial-gradient(circle, white, yellow, red);
+			background: radial-gradient(circle, white, yellow, red);
+		}
+
+		// 위치
+		.hello2 {
+			background: red; // 미지원 브라우저용
+			background: -webkit-radial-gradient(10% 10%, circle, white, blue);
+			background: -moz-radial-gradient(10% 10%, circle, white, blue);
+			background: -o-radial-gradient(10% 10%, circle, white, blue);
+			background: radial-gradient(circle at 10% 10%, white, blue);
+		}
+
+		// 크기
+		.hello2 {
+			background: darkgreen; // 미지원 브라우저용
+			background: -webkit-radial-gradient(30% 40%, circle closest-side, white, yellow, green);
+			background: -moz-radial-gradient(30% 40%, circle closest-side, white, yellow, green);
+			background: -o-radial-gradient(30% 40%, circle closest-side, white, yellow, green);
+			background: radial-gradient(circle closest-side at 30% 40%, white, yellow, green);
+		}
+	</style>
+	```
+	- 원형 그러데이션: radial-gradient(<최종 모양> <크기> at <위치>, color-stop, [color-stop...])
+		- 모양: circle(원형), ellipse(타원형, default)
+		- 위치: 그러데이션이 시작하는 위치 지정
+			- top, left 등으로 지정하거나 왼쪽 상단에서부터의 거리를 지정
+		- 크기: 그러데이션 원의 크기를 지정. 어느쪽 벽이나 모서리를 기준으로 멈출 것인지
+			- closest-side: 가장 가까운 모서리까지
+			- closest-corner: 가장 가까운 코너까지
+			- farthest-side: 가장 먼 모서리까지
+			- farthest-corner: 가장 먼 코너까지
+		- 색상 중지 점(color-stop): 그러데이션 중간 지점 색 변화
+			-
 
 ## 08. 레이아웃을 위한 스타일
 ## 09. CSS 포지셔닝
