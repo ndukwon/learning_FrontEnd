@@ -613,4 +613,21 @@
 			-
 
 ## 08. 레이아웃을 위한 스타일
+1. CSS와 박스모델
+	- block VS inline: 혼자서 한줄을 차지 or not
+		- block:
+			```
+			<p>, <h1> ~ <h6>, <ul>, <ol>, <div>, <blockquote>, <form>, <hr>, <table>, <fieldset>, <address>
+			```
+		- inline:
+			```
+			<img>, <object>, <br>, <sub>, <sup>, <span>, <input>, <textarea>, <label>, <button>
+			```
+	- Box 모델: margin, border, padding, content 영역 존재
+	- width / height: 가로 / 세로 크기
+		- 설정 단위: px(픽셀), cm(센티미터), %(부모 기준 백분율), auto(컨텐츠의 양에 따라 결정, default)
+	- display:
+
+
+
 ## 09. CSS 포지셔닝
