@@ -626,8 +626,27 @@
 	- Box 모델: margin, border, padding, content 영역 존재
 	- width / height: 가로 / 세로 크기
 		- 설정 단위: px(픽셀), cm(센티미터), %(부모 기준 백분율), auto(컨텐츠의 양에 따라 결정, default)
-	- display:
+	- display: 요소의 화면 배치 방법
+		- block: 요소들을 블록 레벨로 지정
+		- inline: 요소들을 인라인 레벨로 지정
+		- inline-block: 요소들의 배치는 인라인 + 요소들은 블록 레벨
+		- none: 화면에 표시하지 않고 공간도 없음(!= visibility: hidden; 공간 있음)
+		- inherit: 상위 요소의 display 상속
+		- table 형태로 변형
+			- table: 블록 레벨의 표로 만듦
+			- inline-table: 인라인 레벨의 표
+			- table-row: <tr> 사용 한 것 처럼 표의 행으로 만듦
+			- table-row-group: <tbody> 처럼 표의 행 그룹으로 만듦
+			- table-header-group: <thead> 처럼 표의 제목영역 그룹으로 만듦
+			- table-footer-group: <tfoot> 처럼 표의 요약 영역 그룹으로 만듦
+			- table-column: <col> 처럼 표의 열로 만듦
+			- table-column-group: <colgroup> 표의 열 그룹으로 만듦
+			- table-cell: <td>, <th> 처럼 표 하나의 셀로 만듦
+			- table-caption: <caption> 처럼 표의 캡션으로 만듦
+		- list-item: <li>처럼 block 박스와 표시자 박스(bullet)를 만든다.
 
+2. 테두리 관련 속성들
+	- 
 
 
 ## 09. CSS 포지셔닝
