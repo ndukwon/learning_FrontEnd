@@ -646,7 +646,39 @@
 		- list-item: <li>처럼 block 박스와 표시자 박스(bullet)를 만든다.
 
 2. 테두리 관련 속성들
-	- 
+	- border-style : 테두리의 스타일
+		- none: 기본값, 테두리 없음
+		- hidden 테두리가 나타나지 않음
+		- dashed: 긴 점선
+		- dotted: 점선
+		- double: 이중선 (border-width로 선 사이의 간격)
+		- groove: 홈이 파인듯 입체적으로
+		- inset: border-collapse: separate/collapse 에 따라
+			- separate: 테두리가 창에 박혀있는 느낌
+			- collapse: groove와 동일
+		- outset: border-collapse: separate/collapse 에 따라
+			- separate: 전체 테두리가 창에서 튀어나온 느낌
+			- collapse: ridge와 동일
+		- ridge: 테두리를 창에서 튀어나온 느낌
+		- solid: 테두리를 실선으로
+	- border-width: 테두리 두께 지정
+		- border-top/right/bottom/left-width
+	- border-color: 테두리 색상 지정
+		- border-top/right/bottom/left-color
+	- border: 테두리 스타일 묶어서 지정
+		- border-top/right/bottom/left
+		- width | color | style 순서 상관 없음
+	- border-radius: 박스 모서리 둥글게
+		- border-top-left/top-right/bottom-right/bottom-left-radius
+		- 설정 단위: px, em, % 등
+		- 타원만들기: 가로 | 세로 크기 지정
+	- box-shadow: 그림자 효과
+		- 수평 거리 | 수직 거리 | 흐림 정도 | 번짐 정도 | 색상 | inset
+
+3. 여백을 조절하는 속성들
+	- margin: 요소 주변 여백
+		- px, cm / % / auto
+		- auto: display 속성에서 지정한 값에
 
 
 ## 09. CSS 포지셔닝
