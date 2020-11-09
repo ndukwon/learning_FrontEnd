@@ -678,7 +678,18 @@
 3. 여백을 조절하는 속성들
 	- margin: 요소 주변 여백
 		- px, cm / % / auto
-		- auto: display 속성에서 지정한 값에
+		- 1px: 전체
+		- 1px 2px: 위아래 좌우
+		- 1px 2px 3px: 위 좌우 아래
+		- 1px 2px 3px 4px: 위 오른쪽 아래 왼쪽
+		- auto: display 속성에 따라 적절한 값?
+			- 좌우를 auto로 두면 너비의 나머지를 똑같이 맞춰서 중앙정렬이 된다.
+	- padding: content와 border 사이 여백
 
 
 ## 09. CSS 포지셔닝
+1. CSS 포지셔닝과 주요 속성들
+	- CSS 포지셔닝: 화면 콘텐츠의 배치
+	- box-sizing 속성: 너비를 정할때 border, padding를 포함할 것인지
+		- content-box: default! border, padding를 제외하고 너비로 지정된 크기 그대로
+		- border-box: border, padding를 포함하여 너비를 계산함
