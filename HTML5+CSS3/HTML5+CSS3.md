@@ -690,6 +690,16 @@
 ## 09. CSS 포지셔닝
 1. CSS 포지셔닝과 주요 속성들
 	- CSS 포지셔닝: 화면 콘텐츠의 배치
-	- box-sizing 속성: 너비를 정할때 border, padding를 포함할 것인지
+	- box-sizing: 너비를 정할때 border, padding를 포함할 것인지
 		- content-box: default! border, padding를 제외하고 너비로 지정된 크기 그대로
 		- border-box: border, padding를 포함하여 너비를 계산함
+
+	- float: 왼쪽/오른쪽에 이미지와 텍스트를 나란히 배치하려 할때
+		- left/right: 왼쪽/오른쪽
+		- 같은 방향끼리 연달아 있다면 옆으로 쌓인다.
+
+	- clear: float 속성 해제
+		- left/right: 왼쪽/오른쪽 float적용된 것 해제
+		- float은 그 다음 요소에도 적용이 되기 때문에
+
+	-
