@@ -751,3 +751,33 @@
 	- column-span: 여러 column을 병합하여 하나만 쓰는 속성
 		- 1 / all: 유지하거나 / 전부를 합치는 것만 지원
 		- firefox 2016년부터 미지원
+
+3. 표 스타일
+	- caption-side: 표 제목의 위치
+		- top / bottom: 위(기본) / 아래
+	- border: 표 테두리
+		- <table border="1"> 처럼 표의 모든 간격에 적용하는 것과는 다름
+		- table, td 등 각각 지정해야 함
+	- border-collapse: border가 서로 만날때 겹치게 할 것인지
+		- collapse: 하나로 합침
+		- separate: 따로 표시, default, 바깥쪽이 우선
+	- border-spacing: 셀 테두리 사이의 간격
+		- 상하좌우 한번에 지정
+		- 상하 | 좌우 나누어 지정
+	- empty-cells: 내용이 없는 빈 셀의 표시를 지정
+		- show: 테두리를 그리고 비어있음을 나타냄
+		- hide: 테투리를 그리지 않고 비워둠
+	- table-layout: 셀 너비 지정
+		- fixed: 너비 고정
+			- 고정된 너비에 내용을 채우려면 word-break: break-all 속성 추가
+			- 자동 줄바꿈 때문에 height: auto로 두어야 함
+		- auto: 셀 내용에 따라, default
+	- text-align: 셀 내에서의 수평 정렬
+		- left / right / center
+	- vertical-align: 셀 내에서의 수직 정렬
+		- baseline: 부모의 기준선에 맞춤
+		- sub: 아래 첨자 위치에 맞춤
+		- super: 위 첨자 위치에 맞춤
+		- top / middle / bottom: 위쪽 / 중간 / 아래 맞춤
+		- text-top / text-bottom: 부모 글꼴의 윗부분/아랫부분에 맞춤?
+		- 길이 / 백분율
