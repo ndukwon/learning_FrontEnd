@@ -773,7 +773,7 @@
 			- 자동 줄바꿈 때문에 height: auto로 두어야 함
 		- auto: 셀 내용에 따라, default
 	- text-align: 셀 내에서의 수평 정렬
-		- left / right / center
+		- left / right / center~%X
 	- vertical-align: 셀 내에서의 수직 정렬
 		- baseline: 부모의 기준선에 맞춤
 		- sub: 아래 첨자 위치에 맞춤
@@ -781,3 +781,14 @@
 		- top / middle / bottom: 위쪽 / 중간 / 아래 맞춤
 		- text-top / text-bottom: 부모 글꼴의 윗부분/아랫부분에 맞춤?
 		- 길이 / 백분율
+
+## 10. HTML5와 Semantic tag
+1. HTML4 VS HTML5: 태그만 보고도 페이지에서 어떤 부분인지 알 수 있도록
+	- body 안에서?
+		- header: 제목, 검색 창 등
+		- contents: 본문
+		- sidebar: 사이드 바
+		- footer: 저작권 정보, 제작자 정보 등
+	- 본문과 제목을 쉽게 구별, 검색 할 수 있도록
+
+2. 
