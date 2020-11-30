@@ -756,7 +756,10 @@
 	- caption-side: 표 제목의 위치
 		- top / bottom: 위(기본) / 아래
 	- border: 표 테두리
-		- <table border="1"> 처럼 표의 모든 간격에 적용하는 것과는 다름
+		```
+		<table border="1"></table>
+		```
+		- 처럼 표의 모든 간격에 적용하는 것과는 다름
 		- table, td 등 각각 지정해야 함
 	- border-collapse: border가 서로 만날때 겹치게 할 것인지
 		- collapse: 하나로 합침
@@ -782,6 +785,7 @@
 		- text-top / text-bottom: 부모 글꼴의 윗부분/아랫부분에 맞춤?
 		- 길이 / 백분율
 
+
 ## 10. HTML5와 Semantic tag
 1. HTML4 VS HTML5: 태그만 보고도 페이지에서 어떤 부분인지 알 수 있도록
 	- body 안에서?
@@ -791,4 +795,31 @@
 		- footer: 저작권 정보, 제작자 정보 등
 	- 본문과 제목을 쉽게 구별, 검색 할 수 있도록
 
-2. 
+2. 문서 구조를 위한 HTML5 Semantic tag
+	- https://html.spec.whatwg.org/dev/sections.html
+	- header: 머리말 지정 (!= head 태그와 다름을 주의)
+		- 주로 페이지 맨 위쪽, 왼쪽에 삽입
+		- 본문중 해당 내용의 머리말로도 사용
+		- header 내부 구성
+			- form: 검색창
+			- nav: 사이트 메뉴
+	- nav: 동일한 사이트 안의 문서나 다른 사이트의 문서로 연결하는 링크 모음
+		- 위치의 영향을 받지 않고 독립적 사용
+	- section: 주제별 콘텐츠 영역
+		- section 내부 구성
+			- h1 ~ 6 로 제목을 사용
+			- 또다른 section을 둘 수도 있음
+	- article: 독립적인 하나의 콘텐츠 구성 단위
+		- https://html.spec.whatwg.org/dev/sections.html#the-article-element
+		- article 내부 구성
+			- 주로 header, section을 넣는다.
+	- aside: 본문 이외의 내용 표시
+		- 광고나 링크 모음을 넣을때
+	- iframe: 외부 문서 삽입 = inline frame
+		- src: 삽입할 문서 주소
+		- width, height: 너비, 높이 px/백분율
+		- name: frame 이름
+		- seamless: 프레임의 테투리를 없애서 본문의 일부처럼(크롬, 사파리에서만 지원)
+	- footer: 제작 정보와 저작권 정보 표시
+	- address: 사이트 제작자, 연락처 정보 등
+		- 주로 footer 내부에서 사용
