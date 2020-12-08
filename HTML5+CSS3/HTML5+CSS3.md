@@ -823,3 +823,31 @@
 	- footer: 제작 정보와 저작권 정보 표시
 	- address: 사이트 제작자, 연락처 정보 등
 		- 주로 footer 내부에서 사용
+
+3. IE8 이하 버전에서는 어떻게 하나요?
+	- caniuse.com 으로 지원범위 확인
+		- https://caniuse.com/?search=semantic
+		- IE8, 오페라 미니 미지원
+
+		1. 지원하지 않는 tag를 CSS에서 블록 레벨로 정의
+			```
+				header, section, nav, article, footer {
+					display: block;
+				}
+			```
+		2. tag 직접 정의
+			```
+				document.createElement('article');
+				document.createElement('section');
+				document.createElement('aside');
+				document.createElement('nav');
+				document.createElement('header');
+				document.createElement('footer');
+			```
+		3. html5shiv
+			- head 사이에 추가
+
+	- pollyfill: js로 브라우저 진단하여 shim을 자동으로 끼워주는 역할
+		- https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
+		- browswer fragmentation: 어떤 브라우저는 되고 안되는 파편화
+		- shim / fallback: 파편화를 줄이고 같은 결과를 만들기 위한 방법
