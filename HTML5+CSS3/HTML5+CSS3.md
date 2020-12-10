@@ -851,3 +851,35 @@
 		- https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
 		- browswer fragmentation: 어떤 브라우저는 되고 안되는 파편화
 		- shim / fallback: 파편화를 줄이고 같은 결과를 만들기 위한 방법
+
+
+#11 HTML5와 멀티미디어
+1. 웹과 멀티미디어
+	- 과거: 플러그인, ActiveX
+		- 미디어 파일마다 플레이어가 다름
+	- object: 외부 파일 삽입하기
+		- data: 외부파일의 경로(필수)
+		- type: 포함시긴 내용의 유형(필수)
+		- name: 이름
+		- width / height:
+	- embed: 외부파일 삽입하기(닫는 태그 없음)
+		- object를 지원하지 않는 이전 브라우저
+
+	- 멀티미디어 지원
+		- Video
+			- mp4: 거의 모든 브라우저. 웹 제외하고 유료 라이선스
+			- webm: 크롬, 파이어폭스, 오페라. 무료. (모바일x). 최근 많아짐
+			- ogv: 크롬, 파이어폭스, 오페라. 무료. webm 이전에 많이 사용
+
+		- Video Codec
+			- H.264/AVC: mp4에서 사용. 고화질 지원 => 업게 표준. 온라인만 무료. 거의 모든 브라우저 지원.
+			- v8, v9: webm에서 사용. 하드웨어 지원 부족. 화질 우수. 무료.
+			- Ogg Theora: 다른 코덱 비해 화질 약함. 무료.
+
+		- Audio
+			- mp3: 거의 모든 브라우저. 유료 라이선스
+			- ogg: 크롬, 파이어폭스, 오페라, 안드로이드. 무료
+
+		- Audio Codec
+			- MPEG-1 AUDIO Layer3: mp3에서 사용
+			- Ogg Vorbis: 무료! '.ogg', '.oga' 확장자 사용.
