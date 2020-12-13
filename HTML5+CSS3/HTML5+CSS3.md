@@ -883,3 +883,68 @@
 		- Audio Codec
 			- MPEG-1 AUDIO Layer3: mp3에서 사용
 			- Ogg Vorbis: 무료! '.ogg', '.oga' 확장자 사용.
+
+2. 오디오 & 비디오 재생하기
+	1. ```<audio>``` / ```<video>```: 오디오/비디오 파일 삽입
+		- src: 파일 경로
+		- autoplay: 다운되자 마자 자동재생. 모바일에선 자동 재생되지 않음. 비추
+		- width/height: 비디오 크기
+		- controls: 웹 화면에 재생/멈춤, 진행 바 볼륨 등 컨트롤 막대 표시
+			- 브라우저에서 지원하며 모양은 각각 다름
+		- loop: 반복 재생
+		- muted: 음소거
+		- preload: 재생버튼 전에 미리 다운로드
+			- none: 미리 다운로드 X
+			- metadata: 메타정보만 다운로드
+			- auto: preload만 선언시 default. 미리 다운로드함
+		- poster: 재생이 안되는 상황에서의 이미지 지정
+		- 마우스 오른쪽 메뉴로 control 표시 혹은 조작 할 수 있음
+
+		<audio controls loop muted>
+			<source src="https://bigsoundbank.com/UPLOAD/ogg/0115.ogg" type="audio/ogg">
+			<source src="https://bigsoundbank.com/UPLOAD/mp3/0117.mp3" type="audio/mp3">
+		</audio><br />
+
+		<video controls loop muted width="300" preload="none">
+			<source src="https://docs.google.com/uc?export=download&id=1worT_sLRzbUMGyLSUHRhxiW_frAYIQ3o" type="video/ogg">
+			<source src="https://filesamples.com/samples/video/webm/sample_960x540.webm" type="video/webm">
+
+			<source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" type="video/mp4">
+		</video><br />
+
+	3. ```<source>```: 여러 미디어 파일 한번에 지정
+		- video 태그 안에서
+		- src: 파일 경로
+		- type: 미디어 파일 유형
+		- codecs: 비디오 코덱 지정
+		- 파일 제공 사이트에서 MIME 유형 지정 필요
+			- 로컬에선 되지만 재생되지 않는 경우가 있음
+			- 파일이 인식될 수 있도록 설정 필요
+		- html5 이하에서 보여줘야 한다면 플래시 무비로 변환 후 플러그인으로 삽입
+		```
+			<video controls>
+				<source src="dummy.mp4" type="video/mp4">
+				<source src="dummy.webm" type="video/webm">
+				<source src="dummy.ogv" type="video/ogg">
+				이 영상은 HTML5을 지원하는 브라우저에서 재생 가능합니다.
+				OR
+				<object data="dummy.swf" type="application/x-shockwave-flash"></object>
+			</video>
+		```
+
+		4. ```<track>```: 자막 추가
+			- kind: 자막의 종류
+				- subtitles: default. 소리 나지만 이해할 수 없는 경우, 다른 언어를 위해
+				- captions: 청각장애인용 혹은 소리를 켤 수 없는 경우
+				- descriptions: 비디오 컨텐츠에 대한 설명. 화면에 표시되지 않음
+				- chapters: 비디오 탐색을 위한 창 제목. 화면에 표시되지 않음
+				- metadata: 비디오 컨텐츠 정보. 화면에 표시되지 않음
+			- src: 자막 텍스트 파일의 경로
+			- srclang: 사용하는 언어 지정.
+				- ex) ko / en 등
+				- kind="subtitles" 이면 반드시
+			- label: 자막이 여러개일 경우 식별
+			- default: 기본으로 사용할 자막 지정
+			```
+			<track kind="subtitles" src="dummy.vtt" srclang="ko" label="korean" default>
+			```
