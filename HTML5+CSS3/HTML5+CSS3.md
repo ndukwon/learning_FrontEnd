@@ -2,6 +2,7 @@
 - https://www.coupang.com/vp/products/69096427?itemId=231125641&vendorItemId=3564292720&q=html+css&itemsCount=36&searchId=a73ef92e67d1427dbec130b3d88dab08&rank=1&isAddedCart=
 - 저자: 고경희
 - 출판: 이지스 퍼블리싱
+- 예제들: https://github.com/funnycom/html5-css3
 
 ## 목차
 01. HTML 기본기 다지기
@@ -932,19 +933,61 @@
 			</video>
 		```
 
-		4. ```<track>```: 자막 추가
-			- kind: 자막의 종류
-				- subtitles: default. 소리 나지만 이해할 수 없는 경우, 다른 언어를 위해
-				- captions: 청각장애인용 혹은 소리를 켤 수 없는 경우
-				- descriptions: 비디오 컨텐츠에 대한 설명. 화면에 표시되지 않음
-				- chapters: 비디오 탐색을 위한 창 제목. 화면에 표시되지 않음
-				- metadata: 비디오 컨텐츠 정보. 화면에 표시되지 않음
-			- src: 자막 텍스트 파일의 경로
-			- srclang: 사용하는 언어 지정.
-				- ex) ko / en 등
-				- kind="subtitles" 이면 반드시
-			- label: 자막이 여러개일 경우 식별
-			- default: 기본으로 사용할 자막 지정
-			```
-			<track kind="subtitles" src="dummy.vtt" srclang="ko" label="korean" default>
-			```
+	4. ```<track>```: 자막 추가
+		- kind: 자막의 종류
+			- subtitles: default. 소리 나지만 이해할 수 없는 경우, 다른 언어를 위해
+			- captions: 청각장애인용 혹은 소리를 켤 수 없는 경우
+			- descriptions: 비디오 컨텐츠에 대한 설명. 화면에 표시되지 않음
+			- chapters: 비디오 탐색을 위한 창 제목. 화면에 표시되지 않음
+			- metadata: 비디오 컨텐츠 정보. 화면에 표시되지 않음
+		- src: 자막 텍스트 파일의 경로
+		- srclang: 사용하는 언어 지정.
+			- ex) ko / en 등
+			- kind="subtitles" 이면 반드시
+		- label: 자막이 여러개일 경우 식별
+		- default: 기본으로 사용할 자막 지정
+		```
+		<track kind="subtitles" src="dummy.vtt" srclang="ko" label="korean" default>
+		```
+
+		- WebVTT 자막 파일
+			- smi: 자막 내용만
+			- srt: 자막, 시작/종료 시간
+			- vtt: WebVTT. 자막, 시작/종료 시간
+				```
+					시작 시간 --> 종료시간
+					자막 내용
+
+				 	HH:MM:SS.ttt --> HH:MM:SS.ttt
+					자막 내용
+				```
+				- 대부분 웹서버는 vtt파일을 인식하지 못함 >> MIME type 추가
+			- MS HTML5 Video Caption Maker 에서 자막 파일을 쉽게 만들 수 있음
+				- https://testdrive-archive.azurewebsites.net/Graphics/CaptionMaker/Default.html
+
+	- 동영상으로 홈페이지 대문 만들기
+		- 내용이 화면 단위 일때
+		- 자동재생
+			- muted가 설정되어 있어야 자동재생을 시켜줌
+			- 스마트폰은 풀스크린 배경을 사용 불가 >> 이미지로 대체
+		- 20~30초 정도 5MB 미만 권장
+		- 오디오가 제거된 영상 권장
+
+		```
+			<style>
+				.video-background {
+					position: fixed;
+					top: 0;
+					left: 0;
+					height: auto;
+					width: auto;
+					min-height: 100%;
+					min-width: 100%;
+					z-index: -100;
+
+					// 미지원
+					background: url([동영상 대체 이미지]) left no-repeat;
+					background-size: cover;
+				}
+			</style>
+		```
