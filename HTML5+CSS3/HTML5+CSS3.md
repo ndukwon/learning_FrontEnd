@@ -1071,4 +1071,15 @@
 			</div>
 		</div>
 
-2. 
+2. 속성 선택자
+	1. ``` a[href] ``` : 해당 속성을 가진
+	2. ``` a[target="_blank"] ``` : 해당 속성의 값과 일치
+	3. ``` a[class ~="button"] ``` : 해당 속성과 일치한 것이 들어있어야 함(like 검색은 아님)
+		- like 검색은 아님: class="flat button"은 해당되고, class="flat-button" 은 해당되지 않음
+	4. ``` a[title |="us"] ``` : 해당 속성과 일치하거나 일치한 단어 + '-'(하이픈) 로 된 요소
+		- title="us", title="us-english" 둘다 해당됨
+	5. ``` a[title ^="en"] ``` : 해당 속성으로 시작(startsWith)
+		- title="en", title="english" 둘다 해당됨
+	6. ``` a[href $="xls"] ``` : 해당 속성으로 끝남(endsWith)
+		- href="intro.xls" 해당 됨
+	7. ``` a[href *="xls"] ``` : 해당 속성과 일부 일치하는 요소(like 검색)
