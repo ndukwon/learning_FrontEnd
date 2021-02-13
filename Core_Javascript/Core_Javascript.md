@@ -19,7 +19,7 @@
   1. 상황에 따라 달라지는 this
   2. 명시적으로 this를 바인딩하는 방법
 04. 콜백함수
-  1. 
+  1.
 05. 클로저
 06. 프로토타입
 07. 클래스
@@ -86,7 +86,7 @@
   - environmentRecord: 호이스팅
     - hoisting: 선언부분이 컨텍스트의 상위로 올라가서 가장 마지막에 선언된 변수 하나로만 동작하게 되는 상황
       - 함수도 미리 선언하고 써야 호이스팅에 영향받지 않는다.
-    - 이름을 다르게 쓰면 되지 않나? const, let을 쓰면 되고, 툴이 경고를 해주지 않나?
+    - typescript, ES6 기준: 이름을 다르게 쓰면 되지 않나? const, let을 쓰면 되고, 툴이 경고를 해주지 않나?
   - outerEnvironmentReference: 스코프체인
     - scope chain: 변수를 찾을때 environmentRecord (>> outerEnvironmentReference) * n 순서로 찾고
       가장 먼저 찾은 변수만 사용할 수 있다.
@@ -96,3 +96,24 @@
 
 
 ## 03. this
+1. 상황에 따라 달라지는 this
+  - this: 특정 객체의 프로퍼티로서 동작
+  - 전역 객체
+    - Browser: window
+    - Node.js: global
+    - 전역에 선언은 this.a = '~~' 혹은 var a = '~~' 해도 되지만
+    - 전역의 변수를 삭제하는것은 선언한 방식과 완전히 동일해야 삭제가 된다.(의도치 않은 삭제 방지)
+      - this.a = '~~' >> delete this.a
+      - var a = '~~' >> delete a
+  - Method로 호출(. 찍고 호출) : 해당 객체에 바인딩
+    - constructor에서의 this도 해당
+  - Function으로 호출(그냥 호출) : this === 전역 객체에 바인딩
+    - Callback은 일반적으로 함수호출
+2. 명시적으로 this를 바인딩하는 방법
+  - self 등으로 this를 미리 저장하여 사용
+  - 객체.메소드.call(this 로 지정할 인자, 원형의 인자들)
+  - 객체.메소드.apply(this 로 지정할 인자, [원형의 인자들 배열])
+  - 객체.메소드.bind(this 로 지정할 인자, 원형의 인자들)
+    - 메소드 원형의 인자들 중 앞에서부터 몇개만 미리 지정 가능
+    - bound [메소드 명] 으로 나오면 bind 된 것임
+  - Arrow function: this가 아예 없으며 스코프체인상 가장 가까운 this
